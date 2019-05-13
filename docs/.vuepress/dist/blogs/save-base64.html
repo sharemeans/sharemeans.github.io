@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>base64字符串保存 | Sharemeans</title>
+    <meta name="description" content="share everything we knowns">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.5113434f.css" as="style"><link rel="preload" href="/assets/js/app.a72b6448.js" as="script"><link rel="preload" href="/assets/js/13.3772fa47.js" as="script"><link rel="prefetch" href="/assets/js/10.e52248ed.js"><link rel="prefetch" href="/assets/js/11.a14a13fa.js"><link rel="prefetch" href="/assets/js/12.2d35b866.js"><link rel="prefetch" href="/assets/js/14.7e602616.js"><link rel="prefetch" href="/assets/js/15.da36af82.js"><link rel="prefetch" href="/assets/js/16.ae416c7c.js"><link rel="prefetch" href="/assets/js/17.d141206b.js"><link rel="prefetch" href="/assets/js/18.ee496bc6.js"><link rel="prefetch" href="/assets/js/19.c6a50fec.js"><link rel="prefetch" href="/assets/js/2.3753830e.js"><link rel="prefetch" href="/assets/js/20.5a54938a.js"><link rel="prefetch" href="/assets/js/3.d7bc5234.js"><link rel="prefetch" href="/assets/js/4.4a1900a7.js"><link rel="prefetch" href="/assets/js/5.db1b67e1.js"><link rel="prefetch" href="/assets/js/6.1c44d2bf.js"><link rel="prefetch" href="/assets/js/7.e515983c.js"><link rel="prefetch" href="/assets/js/8.91265c5b.js"><link rel="prefetch" href="/assets/js/9.9f6d2172.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5113434f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Sharemeans</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blogs/" class="nav-link router-link-active">Blog</a></div><div class="nav-item"><a href="/vue/" class="nav-link">Vue</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blogs/" class="nav-link router-link-active">Blog</a></div><div class="nav-item"><a href="/vue/" class="nav-link">Vue</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blogs/blog-history.html" class="sidebar-link">我的知识沉淀之旅</a></li><li><a href="/blogs/meta.html" class="sidebar-link">移动端meta</a></li><li><a href="/blogs/code-clean.html" class="sidebar-link">代码简洁之道</a></li><li><a href="/blogs/flex-layout.html" class="sidebar-link">flex上中下布局</a></li><li><a href="/blogs/save-base64.html" class="active sidebar-link">base64字符串保存</a></li><li><a href="/blogs/proxy.html" class="sidebar-link">正向代理和反向代理的区别</a></li><li><a href="/blogs/property-attribute.html" class="sidebar-link">html property &amp; attribute</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="base64字符串保存"><a href="#base64字符串保存" aria-hidden="true" class="header-anchor">#</a> base64字符串保存</h1> <div class="language- extra-class"><pre class="language-text"><code>&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;script&gt;
+//方法1
+function saveAsLink(base64Str) {
+  var a = document.createElement('a');   // 转换完成，创建一个a标签用于下载
+  a.download = fileName;
+  a.href = 'data:application/msword;base64,' + base64Str;
+  a.style.display = 'none';
+  document.body.appendChild(a)    // 修复firefox中无法触发click
+  a.click();
+  document.body.removeChild(a)
+}
+saveAsLink(fileBse64Str)
+//方法2(firefox浏览器不兼容)
+var blob = new Blob([_base64ToArrayBuffer(fileBse64Str)], {type: 'application/msword'}), fileName = '文件名称.doc'
+function _base64ToArrayBuffer(base64) {
+    var binary_string =  window.atob(base64);
+    var len = binary_string.length;
+    var bytes = new Uint8Array( len );
+    for (var i = 0; i &lt; len; i++)        {
+        bytes[i] = binary_string.charCodeAt(i);
+    }
+    return bytes.buffer;
+}
+function downFile(blob, fileName) {
+  if (window.navigator.msSaveOrOpenBlob) {
+      navigator.msSaveBlob(blob, fileName);
+  } else {
+      var link = document.createElement('a');
+      debugger
+      link.href = window.URL.createObjectURL(blob);
+      link.download = fileName;
+      link.click();
+      window.URL.revokeObjectURL(link.href);
+  }
+}
+downFile(blob, fileName)
+&lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/blogs/flex-layout.html" class="prev">
+          flex上中下布局
+        </a></span> <span class="next"><a href="/blogs/proxy.html">
+          正向代理和反向代理的区别
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.a72b6448.js" defer></script><script src="/assets/js/13.3772fa47.js" defer></script>
+  </body>
+</html>

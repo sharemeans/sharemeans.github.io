@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>git 常用命令 | Sharemeans</title>
+    <meta name="description" content="share everything we knowns">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.5113434f.css" as="style"><link rel="preload" href="/assets/js/app.a72b6448.js" as="script"><link rel="preload" href="/assets/js/10.e52248ed.js" as="script"><link rel="prefetch" href="/assets/js/11.a14a13fa.js"><link rel="prefetch" href="/assets/js/12.2d35b866.js"><link rel="prefetch" href="/assets/js/13.3772fa47.js"><link rel="prefetch" href="/assets/js/14.7e602616.js"><link rel="prefetch" href="/assets/js/15.da36af82.js"><link rel="prefetch" href="/assets/js/16.ae416c7c.js"><link rel="prefetch" href="/assets/js/17.d141206b.js"><link rel="prefetch" href="/assets/js/18.ee496bc6.js"><link rel="prefetch" href="/assets/js/19.c6a50fec.js"><link rel="prefetch" href="/assets/js/2.3753830e.js"><link rel="prefetch" href="/assets/js/20.5a54938a.js"><link rel="prefetch" href="/assets/js/3.d7bc5234.js"><link rel="prefetch" href="/assets/js/4.4a1900a7.js"><link rel="prefetch" href="/assets/js/5.db1b67e1.js"><link rel="prefetch" href="/assets/js/6.1c44d2bf.js"><link rel="prefetch" href="/assets/js/7.e515983c.js"><link rel="prefetch" href="/assets/js/8.91265c5b.js"><link rel="prefetch" href="/assets/js/9.9f6d2172.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5113434f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Sharemeans</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blogs/" class="nav-link router-link-active">Blog</a></div><div class="nav-item"><a href="/vue/" class="nav-link">Vue</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blogs/" class="nav-link router-link-active">Blog</a></div><div class="nav-item"><a href="/vue/" class="nav-link">Vue</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blogs/blog-history.html" class="sidebar-link">我的知识沉淀之旅</a></li><li><a href="/blogs/meta.html" class="sidebar-link">移动端meta</a></li><li><a href="/blogs/code-clean.html" class="sidebar-link">代码简洁之道</a></li><li><a href="/blogs/flex-layout.html" class="sidebar-link">flex上中下布局</a></li><li><a href="/blogs/save-base64.html" class="sidebar-link">base64字符串保存</a></li><li><a href="/blogs/proxy.html" class="sidebar-link">正向代理和反向代理的区别</a></li><li><a href="/blogs/property-attribute.html" class="sidebar-link">html property &amp; attribute</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="git-常用命令"><a href="#git-常用命令" aria-hidden="true" class="header-anchor">#</a> git 常用命令</h1> <h2 id="本地代码新建远程仓库"><a href="#本地代码新建远程仓库" aria-hidden="true" class="header-anchor">#</a> 本地代码新建远程仓库</h2> <p>如果本地配置的ssh 是其它域名下的，比如说公司内网gitlab，但是你此时想要创建的仓库是github上的，那代码推到远程仓库的时候需要使用https协议，而不是ssh，不然的话身份认证会失败的。</p> <div class="language- extra-class"><pre class="language-text"><code>git@github.com: Permission denied (publickey).
+</code></pre></div><h5 id="远程："><a href="#远程：" aria-hidden="true" class="header-anchor">#</a> 远程：</h5> <p>创建一个仓库， 假如链接为</p> <div class="language- extra-class"><pre class="language-text"><code>https://github.com/sharemeans/vue.git/
+</code></pre></div><h5 id="本地："><a href="#本地：" aria-hidden="true" class="header-anchor">#</a> 本地：</h5> <div class="language- extra-class"><pre class="language-text"><code>cd my-vue
+git init
+git add .
+git commit -m &quot;项目初始化&quot;
+git remote add origin https://github.com/sharemeans/vue.git/
+// 根据提示输入账号密码，成功之后代码自动上传
+// 代码推送到远程 -u表示推送成功后自动建立本地分支与远程分支的追踪
+git push -u origin master
+</code></pre></div><h2 id="查看远程仓库地址"><a href="#查看远程仓库地址" aria-hidden="true" class="header-anchor">#</a> 查看远程仓库地址</h2> <div class="language- extra-class"><pre class="language-text"><code>git remote -v
+</code></pre></div><h2 id="查看本地分支跟踪的远程分支"><a href="#查看本地分支跟踪的远程分支" aria-hidden="true" class="header-anchor">#</a> 查看本地分支跟踪的远程分支</h2> <div class="language- extra-class"><pre class="language-text"><code>git branch -vv
+</code></pre></div><h2 id="基于远程分支a创建本地跟踪分支a"><a href="#基于远程分支a创建本地跟踪分支a" aria-hidden="true" class="header-anchor">#</a> 基于远程分支A创建本地跟踪分支A</h2> <div class="language- extra-class"><pre class="language-text"><code>git checkout -b A origin/A
+</code></pre></div><h2 id="基于本地分支b创建本地分支a"><a href="#基于本地分支b创建本地分支a" aria-hidden="true" class="header-anchor">#</a> 基于本地分支B创建本地分支A</h2> <div class="language- extra-class"><pre class="language-text"><code>git checkout -b A B
+</code></pre></div><h2 id="基于远程分支创建本地同名跟踪分支"><a href="#基于远程分支创建本地同名跟踪分支" aria-hidden="true" class="header-anchor">#</a> 基于远程分支创建本地同名跟踪分支</h2> <div class="language- extra-class"><pre class="language-text"><code>git checkout --track origin/A
+</code></pre></div><h2 id="合并a-分支到当前分支，且所有冲突都采用a分支"><a href="#合并a-分支到当前分支，且所有冲突都采用a分支" aria-hidden="true" class="header-anchor">#</a> 合并A 分支到当前分支，且所有冲突都采用A分支</h2> <div class="language- extra-class"><pre class="language-text"><code>git pull -s recursive -X theirs A
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.a72b6448.js" defer></script><script src="/assets/js/10.e52248ed.js" defer></script>
+  </body>
+</html>
