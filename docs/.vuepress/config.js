@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/vueBlog/',
   title: 'Sharemeans',
   description: 'share everything we knowns',
   // configureWebpack: {
