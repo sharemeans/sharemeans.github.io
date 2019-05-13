@@ -9,7 +9,8 @@ module.exports = {
   // },
   themeConfig: {
     nav: [
-      { text: 'Blog', link: '/blogs/' }
+      { text: 'Blog', link: '/blogs/' },
+      { text: 'Vue', link: '/vue/' }
     ],
     sidebar: {
       '/blogs/': [
@@ -20,6 +21,9 @@ module.exports = {
         '/blogs/save-base64',
         '/blogs/proxy',
         '/blogs/property-attribute'
+      ],
+      '/vue/': [
+        '/vue/mount-flow'
       ]
     },
     activeHeaderLinks: false
