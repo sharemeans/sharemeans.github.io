@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/vueBlog/',
+  base: '/',
   title: 'Sharemeans',
   description: 'share everything we knowns',
   // configureWebpack: {
@@ -15,7 +15,6 @@ module.exports = {
     ],
     sidebar: {
       '/blogs/': [
-        '/blogs/blog-history',
         '/blogs/meta',
         '/blogs/code-clean',
         '/blogs/flex-layout',
