@@ -11,7 +11,8 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: 'Blog', link: '/blogs/' },
-      { text: 'Vue', link: '/vue/' }
+      { text: 'Vue', link: '/vue/' },
+      { text: 'Think', link: '/think/' }
     ],
     sidebar: {
       '/blogs/': [
@@ -20,10 +21,14 @@ module.exports = {
         '/blogs/flex-layout',
         '/blogs/save-base64',
         '/blogs/proxy',
-        '/blogs/property-attribute'
+        '/blogs/property-attribute',
+        '/blogs/fiddler-debug-online'
       ],
       '/vue/': [
         '/vue/mount-flow'
+      ],
+      '/think/': [
+        '/think/manage-time'
       ]
     },
     activeHeaderLinks: false
