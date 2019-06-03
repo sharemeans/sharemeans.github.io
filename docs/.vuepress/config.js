@@ -22,7 +22,8 @@ module.exports = {
         '/blogs/save-base64',
         '/blogs/proxy',
         '/blogs/property-attribute',
-        '/blogs/fiddler-debug-online'
+        '/blogs/fiddler-debug-online',
+        '/blogs/linux-command'
       ],
       '/vue/': [
         '/vue/mount-flow'
