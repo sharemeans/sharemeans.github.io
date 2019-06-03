@@ -9,7 +9,8 @@
     "start": "npm run dev",
     "build": "node build/build.js",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "deploy": "sh deploy.sh"
   },
   "dependencies": {
     "cssnano": "^3.10.0",
