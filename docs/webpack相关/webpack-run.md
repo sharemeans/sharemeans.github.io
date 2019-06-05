@@ -24,3 +24,6 @@
 #### normalModuleFactory
 
 ## buildModule
+
+## normalModule 与 AST
+## AST什么时候生成，文件是按照什么顺序解析的
