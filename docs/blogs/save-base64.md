@@ -1,6 +1,6 @@
 # base64字符串保存
 
-```
+```html
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -49,5 +49,4 @@ function downFile(blob, fileName) {
 downFile(blob, fileName)
 </script>
 </html>
-
 ```

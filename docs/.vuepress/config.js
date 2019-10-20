@@ -23,10 +23,18 @@ module.exports = {
         '/blogs/proxy',
         '/blogs/property-attribute',
         '/blogs/fiddler-debug-online',
-        '/blogs/linux-command'
+        '/blogs/linux-command',
+        '/blogs/print',
+        '/blogs/define-property',
+        // '/blogs/proxy-reflect',
+        '/blogs/https',
+        '/blogs/in-operator',
+        '/blogs/charles-rewrite-header'
       ],
       '/vue/': [
-        '/vue/mount-flow'
+        '/vue/mount-flow',
+        '/vue/vue-runtime-compile',
+        '/vue/vue-error'
       ],
       '/think/': [
         '/think/manage-time'

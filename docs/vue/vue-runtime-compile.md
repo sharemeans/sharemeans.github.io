@@ -28,7 +28,7 @@ vue的package.json文件中的module属性指定了模块的入口文件为vue.r
 
 通常，我们的单页应用的入口html，入口文件和顶级组件分别是index.html, main.js和App.js。代码如下：
 
-```
+```html
 <!-- index.html -->
 <!DOCTYPE html>
 <html>
@@ -93,7 +93,7 @@ import Vue from 'vue/dist/vue.esm.js'
 那么，针对这个情况怎么解决呢？想必很多人都知道答案了。代码如下：
 
 
-```
+```html
 <!-- index.html -->
 <!DOCTYPE html>
 <html>
