@@ -12,6 +12,9 @@ module.exports = {
     nav: [
       { text: 'Blog', link: '/blogs/' },
       { text: 'Vue', link: '/vue/' },
+      { text: 'Webpack', link: '/webpack/' },
+      { text: 'Tools', link: '/tools/' },
+      { text: 'uni-app', link: '/uni-app/' },
       { text: 'Think', link: '/think/' }
     ],
     sidebar: {
@@ -36,8 +39,18 @@ module.exports = {
         '/vue/vue-runtime-compile',
         '/vue/vue-error'
       ],
+      '/webpack/': [
+        'cdn-switch',
+      ],
+      '/tools/': [
+        'pipeline-groovy'
+      ],
+      '/uni-app/': [
+        'h5-tree-shaking'
+      ],
       '/think/': [
-        '/think/manage-time'
+        '/think/manage-time',
+        'fanganfenxi'
       ]
     },
     activeHeaderLinks: false
